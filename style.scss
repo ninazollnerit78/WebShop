@@ -1,0 +1,347 @@
+/*************************
+varaibles
+*************************/
+$blue: #4831d4;
+$green: #ccf381;
+$lightgray: #f7f7f7;
+$gray: #333;
+$white: #fff;
+
+$transition: .3s ease;
+
+$font: 16px;
+$fontFamily: 'Roboto', sans-serif;
+
+$padding: 100px 0;
+$boxShadow: 0 0 10px #b7b6b6;
+$textShadow: 0 0 2px #333;
+/*************************
+mixins
+*************************/
+@mixin flex(){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*************************
+basic styles
+*************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: $fontFamily;
+    font-size: $font;
+    color: $gray;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 900;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 80%;
+    padding: $padding;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    background-color: $green;
+    border: none;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.bigbtn{
+    font-size: 13px;
+    padding: 15px 45px;
+    margin: 10px 0;
+    background-color: $green;
+    border: none;
+}
+
+/*****prenav*****/
+.box{
+    background-color: $lightgray;
+    @include flex();
+    padding: 0 40px;
+}
+
+/*****nav*****/
+nav{
+    @include flex();
+    padding: 15px 40px;
+    border-bottom: 4px solid $green;
+
+   h2{
+    font-weight: 500;
+
+    span{
+        font-style: italic;
+        font-weight: 900;
+        color: $green;
+        text-shadow: $textShadow;
+    }
+   }
+   ul{
+       @include flex();
+       
+       li{
+            margin: 0 80px;
+
+        a{
+            color: $gray;
+        }
+       }
+   }
+   .icons{
+        background-color: $white;
+
+        i{
+            margin: 0 10px;
+        }
+   }
+}
+
+
+/*****HOME PAGE*****/
+/*****Hero section*****/
+header{
+    background: url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .style{
+        margin-left: 40px;
+        width: 30%;
+
+        h1{
+            color: $white;
+            font-size: 45px;
+            line-height: 1;
+
+            span{
+                color: $green;
+            }
+        }
+    }
+}
+
+/*****Products section*****/
+.products{
+    padding: $padding;
+    text-align: center;
+
+    h2{
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+    hr{
+        width: 150px;
+        margin: auto;
+        opacity: 0.5;
+    }
+    .articles{
+        display: flex;
+        justify-content: center;
+
+        .container{
+            padding: 30px 0;
+
+            article{
+                width: 30%;
+                box-shadow: $boxShadow;
+    
+                img{
+                    width: 100%;
+                }
+                .text{
+                    text-align: left;
+                    padding: 0 0 10px 10px;
+
+                    h5{
+                        font-size: 18px;
+                    }
+                    p{
+                        font-size: 13px;
+                        margin-top: 15px;
+
+                        span{
+                            color: $blue;
+                            text-decoration-line: line-through;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*****SHOP PAGE*****/
+/*****Shop section*****/
+.shop{
+    background-color: $lightgray;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/*****Cards section*****/
+.cards{
+    display: flex;
+    justify-content: center;
+
+    .container{
+        article{
+            flex: 0 0 23%;
+            padding: 20px 0;
+            text-align: center;
+            border: 1px solid $gray;
+            box-shadow: $boxShadow;
+
+            i{
+                color: $green;
+                text-shadow: $textShadow;
+                background-color: $white;
+                font-size: 25px;
+            }
+            h4{
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+/*****Hero section*****/
+.hero{
+    background: url(img/shop.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+    .sale{
+        margin-right: 400px;
+
+        h3{
+            font-weight: 300;
+            font-size: 25px;
+        }
+        h2{
+            font-size: 60px;
+        }
+        p{
+            font-size: 13px;
+            margin-top: 10px;
+        }
+    }
+}
+
+
+/*****PRODUCT PAGE*****/
+.nike{
+    display: flex;
+    justify-content: center;
+
+    .container{
+        .about{
+            text-align: left;
+            padding: 150px 40px;
+
+            h2{
+                font-size: 40px;
+            }
+            h4{
+                color: $green;
+                text-shadow: $textShadow;
+                font-size: 25px;
+            }
+            p{
+                margin-bottom: 10px;
+                font-size: 13px;
+                
+                span{
+                    color: $blue;
+                }
+                input{
+                    width: 40px;
+                }
+            }
+            hr{
+                height: 3px;
+                opacity: 0.7;
+                background-color: $gray;
+                margin: 20px 0;
+            }
+            .like{
+                display: flex;
+                align-items: center;
+                
+                i{
+                    border: 1px solid $gray;
+                    padding: 13.5px;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+}
+
+
+
+/*****footer*****/
+footer{
+    background-color: $blue;
+    display: flex;
+    justify-content: center;
+
+    article{
+        flex: 0 0 32%;
+        color: $white;
+
+        h3{
+            margin-bottom: 20px;
+        }
+        a{
+            color: $white;
+        }
+        p{
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        input{
+            padding: 10px;
+            margin-right: 10px;
+        }
+    }
+}
+
+/*****bottom*****/
+.bottom{
+    background-color: $green;
+
+    .icons{
+        i{
+            margin: 0 5px;
+            font-size: 12px;
+        }
+    }
+}
